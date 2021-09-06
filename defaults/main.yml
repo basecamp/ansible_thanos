@@ -1,5 +1,5 @@
 ---
-thanos_version: 0.8.1
+thanos_version: 0.8.2
 # Defaults to prometheus for sidecar
 thanos_user: prometheus
 thanos_group: prometheus
@@ -72,6 +72,7 @@ thanos_query_flags: >-
         --grpc-address {{ thanos_query_grpc_listen_address }}
         --query.replica-label {{ thanos_query_replica_label }}
         --log.format={{ thanos_log_format }}
+        --query.auto-downsampling
         {{ thanos_query_stores }}
 
 thanos_store_flags: >-
